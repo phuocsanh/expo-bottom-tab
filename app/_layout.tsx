@@ -38,6 +38,40 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+      <NavigationContainer>
+        <CurvedBottomBarExpo.Navigator
+          type="DOWN"
+          style={styles.bottomBar}
+          shadowStyle={styles.shawdow}
+          height={55}
+          circleWidth={50}
+          bgColor="white"
+          initialRouteName="title1"
+          borderTopLeftRight
+          renderCircle={({ selectedTab, navigate }) => (
+            <Animated.View style={styles.btnCircleUp}>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() => Alert.alert("Click Action")}
+              >
+                <Ionicons name={"apps-sharp"} color="gray" size={25} />
+              </TouchableOpacity>
+            </Animated.View>
+          )}
+          tabBar={renderTabBar}
+        >
+          <CurvedBottomBarExpo.Screen
+            name="title1"
+            position="LEFT"
+            component={() => <Screen1 />}
+          />
+          <CurvedBottomBarExpo.Screen
+            name="title2"
+            component={() => <Screen2 />}
+            position="RIGHT"
+          />
+        </CurvedBottomBarExpo.Navigator>
+      </NavigationContainer>
       {/* <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="MainBottomTab" component={MainBottomTabs} />
       </Stack.Navigator> */}
