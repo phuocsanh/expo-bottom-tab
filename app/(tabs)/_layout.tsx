@@ -9,45 +9,44 @@ import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { BottomFabBar } from "@/components/bottombar";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import HomeScreen from "@/screens/mainBottomTab/HomeScreen";
-import TableRoomScreen from "@/screens/mainBottomTab/TableRoomScreen";
 import { ICONS } from "@/assets";
+import MyBottomBarComponent from "@/components/mytabbar";
 
 const tabBarIcon =
   (name: ImageSourcePropType) =>
   ({ focused }: { focused: boolean }) =>
     <Image tintColor={focused ? "white" : "green"} source={name} />;
 
-const customBottomFabBar = (props: BottomTabBarProps) => (
-  <BottomFabBar
-    mode={"default"}
-    // eslint-disable-next-line react-native/no-inline-styles
-    focusedButtonStyle={{
-      shadowColor: "#000",
-      shadowOffset: {
-        width: 0,
-        height: 7,
-      },
-      shadowOpacity: 0.41,
-      shadowRadius: 9.11,
-      elevation: 14,
-    }}
-    // eslint-disable-next-line react-native/no-inline-styles
-    bottomBarContainerStyle={{
-      position: "absolute",
-      bottom: 0,
-      left: 0,
-      right: 0,
-    }}
-    {...props}
-  />
-);
+// const customBottomFabBar = (props: BottomTabBarProps) => (
+//   <BottomFabBar
+//     mode={"default"}
+//     // eslint-disable-next-line react-native/no-inline-styles
+//     focusedButtonStyle={{
+//       shadowColor: "#000",
+//       shadowOffset: {
+//         width: 0,
+//         height: 7,
+//       },
+//       shadowOpacity: 0.41,
+//       shadowRadius: 9.11,
+//       elevation: 14,
+//     }}
+//     // eslint-disable-next-line react-native/no-inline-styles
+//     bottomBarContainerStyle={{
+//       position: "absolute",
+//       bottom: 0,
+//       left: 0,
+//       right: 0,
+//     }}
+//     {...props}
+//   />
+// );
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
     <Tabs
-      tabBar={customBottomFabBar}
+      tabBar={MyBottomBarComponent}
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
         headerShown: false,
@@ -63,7 +62,7 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="HomeScreen"
+        name="index"
         options={{
           title: "Home",
           tabBarIcon: tabBarIcon(ICONS.ic_home),

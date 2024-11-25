@@ -1,11 +1,11 @@
-import { StyleSheet } from "react-native-size-scaling";
+import { StyleSheet } from 'react-native-size-scaling';
 
 export const styles = StyleSheet.create({
   wrapContainer: {
     flex: 1,
   },
   shadow: {
-    shadowColor: "#DDDDDD",
+    shadowColor: '#DDDDDD',
     shadowOffset: {
       width: 0,
       height: 0,
@@ -14,20 +14,20 @@ export const styles = StyleSheet.create({
     shadowRadius: 5,
   },
   container: {
-    alignSelf: "center",
-    position: "absolute",
+    alignSelf: 'center',
+    position: 'absolute',
     bottom: 0,
   },
   main: {
-    position: "absolute",
-    flexDirection: "row",
-    justifyContent: "space-between",
+    position: 'absolute',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   rowLeft: {
     flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   flex1: {
     flex: 1,
@@ -37,8 +37,8 @@ export const styles = StyleSheet.create({
   },
   itemTab: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   circleRight: {
     marginRight: 25,

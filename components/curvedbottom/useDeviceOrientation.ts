@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-shadow */
-import { useEffect, useState } from "react";
-import { Dimensions, ScaledSize } from "react-native";
+import { useEffect, useState } from 'react';
+import { Dimensions, ScaledSize } from 'react-native';
 
 const isOrientationPortrait = ({ width, height }: ScaledSize) =>
   height >= width;
@@ -8,7 +8,7 @@ const isOrientationLandscape = ({ width, height }: ScaledSize) =>
   width >= height;
 
 export function useDeviceOrientation() {
-  const screen = Dimensions.get("screen");
+  const screen = Dimensions.get('screen');
   const initialState = {
     portrait: isOrientationPortrait(screen),
     landscape: isOrientationLandscape(screen),
@@ -24,14 +24,14 @@ export function useDeviceOrientation() {
       });
     };
 
-    const subscription = Dimensions.addEventListener("change", onChange);
+    const subscription = Dimensions.addEventListener('change', onChange);
 
     return () => {
-      if (typeof subscription?.remove === "function") {
+      if (typeof subscription?.remove === 'function') {
         subscription.remove();
       }
     };
   }, []);
 
-  return orientation.portrait === true ? "PORTRAIT" : "LANDSCAPE";
+  return orientation.portrait === true ? 'PORTRAIT' : 'LANDSCAPE';
 }

@@ -1,5 +1,5 @@
-import * as shape from "d3-shape";
-import { scale } from "react-native-size-scaling";
+import * as shape from 'd3-shape';
+import { scale } from 'react-native-size-scaling';
 
 //** Path Line */
 const line = (width: number, height: number, centerWidth: number) => {
@@ -170,40 +170,40 @@ export const getPathUp = (
   iHeight: number,
   centerWidth = 50,
   borderTopLeftRight = false,
-  position: "CENTER" | "LEFT" | "RIGHT"
+  position: 'CENTER' | 'LEFT' | 'RIGHT'
 ) => {
   const height = scale(iHeight);
   const circleWidth = scale(centerWidth);
 
-  if (borderTopLeftRight && position === "LEFT") {
+  if (borderTopLeftRight && position === 'LEFT') {
     return `${lineBorderLeft(width, height, centerWidth)} ${lineCurved(
       circleWidth / 1.7,
       circleWidth
     )}`;
   }
 
-  if (borderTopLeftRight && position === "RIGHT") {
+  if (borderTopLeftRight && position === 'RIGHT') {
     return `${lineBorderRight(width, height, centerWidth)} ${lineCurved(
       width - circleWidth * 1.6,
       circleWidth
     )}`;
   }
 
-  if (borderTopLeftRight && position === "CENTER") {
+  if (borderTopLeftRight && position === 'CENTER') {
     return `${lineBorder(width, height, centerWidth)} ${lineCurved(
       width / 2 - circleWidth / 2,
       circleWidth
     )}`;
   }
 
-  if (position === "LEFT") {
+  if (position === 'LEFT') {
     return `${lineLeft(width, height, centerWidth)} ${lineCurved(
       circleWidth / 1.7,
       circleWidth
     )}`;
   }
 
-  if (position === "RIGHT") {
+  if (position === 'RIGHT') {
     return `${lineRight(width, height, centerWidth)} ${lineCurved(
       width - circleWidth * 1.6,
       circleWidth
